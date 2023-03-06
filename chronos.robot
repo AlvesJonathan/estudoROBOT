@@ -8,7 +8,7 @@ ${url}    https://www.demoblaze.com/
 ${navegador}    chrome
 
 *** Keywords ***
-Adicionar item carrinho de compra
+Adicionar Laptops no carrinho de compra
     Open Browser                     ${url}    ${navegador}
     Maximize Browser Window
     Click Link                       Laptops
@@ -17,6 +17,17 @@ Adicionar item carrinho de compra
     Wait Until Element Is Visible    xpath=//div[2]//a
     Click Element                    xpath=//div[2]//a
     Alert Should Be Present
+
+Adicionar Phones no carrinho de compra
+    Open Browser                     ${url}    ${navegador}
+    Maximize Browser Window
+    Click Link                       Phones
+    Wait Until Element Is Visible    link=Iphone 6 32gb
+    Click Link                       Iphone 6 32gb
+    Wait Until Element Is Visible    xpath=//div[2]//a
+    Click Element                    xpath=//div[2]//a
+    Alert Should Be Present
+    
 
 Finalizar compra
     Click Link                        Cart
@@ -36,7 +47,9 @@ Finalizar compra
 
 *** Test Cases ***
 ChronosTest
-    Adicionar item carrinho de compra
+    Adicionar Laptops no carrinho de compra
+    Finalizar compra
+    Adicionar Phones no carrinho de compra
     Finalizar compra
      
 
