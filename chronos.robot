@@ -28,6 +28,15 @@ Adicionar Phones no carrinho de compra
     Click Element                    xpath=//div[2]//a
     Alert Should Be Present
     
+Adicionar Monitors no carrinho de compra
+    Open Browser                     ${url}    ${navegador}
+    Maximize Browser Window
+    Click Link                       Monitors
+    Wait Until Element Is Visible    link=Apple monitor 24
+    Click Link                       Apple monitor 24
+    Wait Until Element Is Visible    xpath=//div[2]//a
+    Click Element                    xpath=//div[2]//a
+    Alert Should Be Present
 
 Finalizar compra
     Click Link                        Cart
@@ -43,14 +52,45 @@ Finalizar compra
      Element Text Should Be           css=.showSweetAlert > h2    Thank you for your purchase!
      Click Button                     css=.confirm
 
-    
+Entrar em contato
+    Open Browser                     ${url}    ${navegador}
+    Maximize Browser Window
+    Click Link                       Contact
+    Wait Until Element Is Visible    id=recipient-email
+    Input Text                       id=recipient-email    email@teste.compra
+    Input Text                       id=recipient-name     Jonathan
+    Input Text                       id=message-text       texto de exemplo
+    Click Button                     xpath=//button[text()='Send message']
+    Alert Should Be Present
+
+Visualizar Video
+    Open Browser                     ${url}    ${navegador}
+    Maximize Browser Window
+    Click Link                       About us
+    Wait Until Element Is Visible    xpath=/html/body/div[4]/div/div/div[2]/form/div/div/button
+    Click Button                     xpath=/html/body/div[4]/div/div/div[2]/form/div/div/button
 
 *** Test Cases ***
-ChronosTest
+Comprar Laptops
     Adicionar Laptops no carrinho de compra
     Finalizar compra
+
+Comprar Phones
     Adicionar Phones no carrinho de compra
     Finalizar compra
+
+Comprar Monitors
+    Adicionar Monitors no carrinho de compra
+    Finalizar compra
+    
+Aba Contact
+    Entrar em contato
+
+Aba About us
+    Visualizar Video
+    
+
+
      
 
     
