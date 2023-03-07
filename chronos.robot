@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation    Robot Framework Sem Complicação
-Library          SeleniumLibrary    timeout=1000
+Library          SeleniumLibrary    timeout=500
 Library          String
 
 *** Variables ***
