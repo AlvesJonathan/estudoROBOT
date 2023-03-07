@@ -1,42 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230307 18:02:40.985" rpa="false" schemaversion="3">
-<suite id="s1" name="Chronos" source="f:\Robot_sem_complicacao\code robot\chronos.robot">
-<test id="s1-t1" name="Aba About us" line="89">
-<kw name="Visualizar Video">
+<robot generator="Robot 6.0.2 (Python 3.11.2 on win32)" generated="20230307 18:42:15.944" rpa="false" schemaversion="3">
+<suite id="s1" name="seuBarriga" source="f:\Robot_sem_complicacao\code robot\seuBarriga.robot">
+<test id="s1-t1" name="Realizando Login" line="47">
+<kw name="Login">
 <kw name="Open Browser" library="SeleniumLibrary">
 <arg>${url}</arg>
 <arg>${navegador}</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230307 18:02:41.130" level="INFO">Opening browser 'chrome' to base url 'https://www.demoblaze.com/'.</msg>
-<status status="PASS" starttime="20230307 18:02:41.130" endtime="20230307 18:02:43.666"/>
+<msg timestamp="20230307 18:42:16.089" level="INFO">Opening browser 'chrome' to base url 'https://seubarriga.wcaquino.me/login'.</msg>
+<status status="PASS" starttime="20230307 18:42:16.088" endtime="20230307 18:42:18.003"/>
 </kw>
 <kw name="Maximize Browser Window" library="SeleniumLibrary">
 <doc>Maximizes current browser window.</doc>
-<status status="PASS" starttime="20230307 18:02:43.666" endtime="20230307 18:02:43.781"/>
+<status status="PASS" starttime="20230307 18:42:18.004" endtime="20230307 18:42:18.124"/>
 </kw>
-<kw name="Click Link" library="SeleniumLibrary">
-<arg>About us</arg>
-<doc>Clicks a link identified by ``locator``.</doc>
-<msg timestamp="20230307 18:02:43.782" level="INFO">Clicking link 'About us'.</msg>
-<status status="PASS" starttime="20230307 18:02:43.781" endtime="20230307 18:02:43.840"/>
+<kw name="Input Text" library="SeleniumLibrary">
+<arg>id=email</arg>
+<arg>${email}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<msg timestamp="20230307 18:42:18.125" level="INFO">Typing text 'email301@teste.com' into text field 'id=email'.</msg>
+<status status="PASS" starttime="20230307 18:42:18.125" endtime="20230307 18:42:18.181"/>
 </kw>
-<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
-<arg>xpath=/html/body/div[4]/div/div/div[2]/form/div/div/button</arg>
-<doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230307 18:02:43.840" endtime="20230307 18:02:44.070"/>
+<kw name="Input Password" library="SeleniumLibrary">
+<arg>id=senha</arg>
+<arg>${senha}</arg>
+<doc>Types the given password into the text field identified by ``locator``.</doc>
+<msg timestamp="20230307 18:42:18.182" level="INFO">Typing password into text field 'id=senha'.</msg>
+<msg timestamp="20230307 18:42:18.203" level="INFO">Temporally setting log level to: NONE</msg>
+<msg timestamp="20230307 18:42:18.228" level="INFO">Log level changed from NONE to INFO.</msg>
+<status status="PASS" starttime="20230307 18:42:18.181" endtime="20230307 18:42:18.228"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
-<arg>xpath=/html/body/div[4]/div/div/div[2]/form/div/div/button</arg>
+<arg>xpath=//button[text()='Entrar']</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230307 18:02:44.071" level="INFO">Clicking button 'xpath=/html/body/div[4]/div/div/div[2]/form/div/div/button'.</msg>
-<status status="PASS" starttime="20230307 18:02:44.070" endtime="20230307 18:02:44.109"/>
+<msg timestamp="20230307 18:42:18.229" level="INFO">Clicking button 'xpath=//button[text()='Entrar']'.</msg>
+<status status="PASS" starttime="20230307 18:42:18.228" endtime="20230307 18:42:18.793"/>
 </kw>
-<status status="PASS" starttime="20230307 18:02:41.129" endtime="20230307 18:02:44.109"/>
+<kw name="Element Text Should Be" library="SeleniumLibrary">
+<arg>css=.alert-success</arg>
+<arg>${msgLogin}</arg>
+<doc>Verifies that element ``locator`` contains exact the text ``expected``.</doc>
+<msg timestamp="20230307 18:42:18.794" level="INFO">Verifying element 'css=.alert-success' contains exact text 'Bem vindo, Jonathan teste!'.</msg>
+<status status="PASS" starttime="20230307 18:42:18.793" endtime="20230307 18:42:18.812"/>
 </kw>
-<status status="PASS" starttime="20230307 18:02:41.129" endtime="20230307 18:02:44.110"/>
+<status status="PASS" starttime="20230307 18:42:16.088" endtime="20230307 18:42:18.812"/>
+</kw>
+<status status="PASS" starttime="20230307 18:42:16.088" endtime="20230307 18:42:18.812"/>
 </test>
 <doc>Robot Framework Sem Complicação</doc>
-<status status="PASS" starttime="20230307 18:02:40.988" endtime="20230307 18:02:44.111"/>
+<status status="PASS" starttime="20230307 18:42:15.947" endtime="20230307 18:42:18.813"/>
 </suite>
 <statistics>
 <total>
@@ -45,7 +57,7 @@
 <tag>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Chronos">Chronos</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="seuBarriga">seuBarriga</stat>
 </suite>
 </statistics>
 <errors>
